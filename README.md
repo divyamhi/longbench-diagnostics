@@ -1,2 +1,2 @@
-# longbench-diagnostics
-Diagnostic evaluation of long-context reasoning in LLMs using LongBench v2 (context scaling, retrieval vs reasoning, prompting strategies)
+A systematic diagnostic framework for analyzing long-context failures in large language models using LongBench v2. 
+Includes context-length scaling, needle-position perturbations, prompting strategy comparisons, and error attribution.
