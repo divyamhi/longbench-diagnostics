@@ -3,7 +3,7 @@ import time
 from transformers import pipeline, AutoTokenizer
 
 from .base import LLMBackend
-from ..prompts.parse_response import extract_choice
+from prompts.parse_response import extract_choice
 
 
 class LocalHFBackend(LLMBackend):

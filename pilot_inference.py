@@ -19,10 +19,10 @@ SRC_DIR = Path(__file__).resolve().parent / "src"
 sys.path.insert(0, str(SRC_DIR))
 
 from dataset_loader import get_by_category, load
-from logging_utils import InferenceLogger
-from models.local_hf import LocalHFBackend
-from prompts.direct_answer import build_da_prompt
-from truncate import generate_splits
+from src.logging_utils import InferenceLogger
+from src.models.local_hf import LocalHFBackend
+from src.prompts.direct_answer import build_da_prompt
+from src.truncate import generate_splits
 
 BUDGET = 8_192
 BUDGET_LABEL = "8k"
