@@ -23,7 +23,7 @@ import argparse
 import csv
 import sys
 from pathlib import Path
-from src.iaa import cohen_kappa, summarize_disagreements
+from iaa import cohen_kappa, summarize_disagreements
 
 VALID_LABELS = {"RF", "RsF", "INC"}
 
