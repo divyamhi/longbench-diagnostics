@@ -49,6 +49,16 @@ Download the dataset separately and place all JSON files inside the following di
 data/longbench_v2/
 ```
 
+Download the LongBench v2 dataset from the official source:
+
+https://huggingface.co/datasets/THUDM/LongBench
+
+After downloading, place the JSON files inside:
+
+```
+data/longbench_v2/
+```
+
 You can create the folder using:
 
 ```
