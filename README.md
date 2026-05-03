@@ -20,7 +20,7 @@ Errors are categorized into:
 ## Environment Setup
 
 ### 1. Clone the repository
-git clone <your-repo-link>
+git clone https://github.com/divyamhi/longbench-diagnostics.git
 cd longbench-diagnostic
 
 ### 2. Create a virtual environment
