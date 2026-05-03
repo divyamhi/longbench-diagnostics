@@ -39,9 +39,26 @@ python -c "import nltk; nltk.download('punkt'); nltk.download('punkt_tab')"
 
 ## How to Run the Code
 
-Ensure dataset is placed in:
+### Dataset Setup
+
+This project uses the LongBench v2 dataset.
+
+Download the dataset separately and place all JSON files inside the following directory:
+
 ```
 data/longbench_v2/
+```
+
+You can create the folder using:
+
+```
+mkdir -p data/longbench_v2
+```
+
+After placing the dataset files in this directory, you can run:
+
+```
+python src/dataset_loader.py
 ```
 
 ### 1. Load dataset
