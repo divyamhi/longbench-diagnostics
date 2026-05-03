@@ -84,10 +84,6 @@ data/processed_longbench/
 python src/dataset_loader.py --data_dir data/processed_longbench
 ```
 
-If you are using raw dataset (without conversion):
-```
-python src/dataset_loader.py
-```
 
 ### 2. Generate truncated datasets
 ```
