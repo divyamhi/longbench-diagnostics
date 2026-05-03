@@ -5,7 +5,7 @@
 ### 1. Clone the repository
 ```
 git clone https://github.com/divyamhi/longbench-diagnostics.git
-cd longbench-diagnostic
+cd longbench-diagnostics
 ```
 
 ### 2. Create a virtual environment
@@ -42,12 +42,6 @@ python -c "import nltk; nltk.download('punkt'); nltk.download('punkt_tab')"
 ### Dataset Setup
 
 This project uses the LongBench v2 dataset.
-
-Download the dataset separately and place all JSON files inside the following directory:
-
-```
-data/longbench_v2/
-```
 
 Download the LongBench v2 dataset from the official source:
 
