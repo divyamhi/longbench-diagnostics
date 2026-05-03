@@ -21,7 +21,7 @@ Errors are categorized into:
 
 ### 1. Clone the repository
 ```
-git clone <your-repo-link>
+git clone https://github.com/divyamhi/longbench-diagnostics.git
 cd longbench-diagnostic
 ```
 
