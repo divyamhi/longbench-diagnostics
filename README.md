@@ -10,23 +10,15 @@ Reasoning Failure (RsF)
 Instruction Non-Compliance (INC)
 Environment Setup
 1. Clone the repository
-
 git clone <your-repo-link>
 cd longbench-diagnostic
-
 2. Create a virtual environment
-
 python -m venv venv
 source venv/bin/activate
-
 3. Install dependencies
-
 pip install -r requirements.txt
-
 4. Download NLTK data (required once)
-
 python -c "import nltk; nltk.download('punkt'); nltk.download('punkt_tab')"
-
 System / Device Used
 OS: macOS
 Python: 3.13
@@ -35,32 +27,30 @@ Models tested:
 Llama-3.1-8B-Instruct (local)
 GPT-4o-mini (API)
 Project Structure
-
 longbench-diagnostic/
-├── data/ Dataset files
-├── src/ Core code
-│ ├── logging_utils.py Logging
-│ ├── span_detect.py Span detection
-│ ├── dataset_loader.py Data loading
-│ ├── truncate.py Context truncation
-│ ├── models/ Model backends
-│ ├── prompts/ Prompt templates
-│ └── iaa.py Annotation metrics
-├── tests/ Unit tests
-├── results/ JSONL output files
-├── annotation/ Annotation CSV and schema
+├── data/                  Dataset files
+├── src/                   Core code
+│   ├── logging_utils.py   Logging
+│   ├── span_detect.py     Span detection
+│   ├── dataset_loader.py  Data loading
+│   ├── truncate.py        Context truncation
+│   ├── models/            Model backends
+│   ├── prompts/           Prompt templates
+│   └── iaa.py             Annotation metrics
+├── tests/                 Unit tests
+├── results/               JSONL output files
+├── annotation/            Annotation CSV and schema
 ├── requirements.txt
 └── README.md
-
 How to Run the Code
+
+Make sure the dataset is placed in:
+
+data/longbench_v2/
 1. Load dataset
-
 python src/dataset_loader.py
-
 2. Generate truncated datasets
-
 python src/truncate.py
-
 3. Run inference (pilot experiments)
 
 Run pilot experiments on:
@@ -80,22 +70,21 @@ Build a prompt (Direct Answer or Extract-Then-Answer)
 Run model inference
 Log results using the InferenceLogger
 
-Each result is stored in JSONL format as:
+Each result is stored in JSONL format:
 
 {
-"instance_id": "...",
-"category": "...",
-"budget": 8192,
-"prompt_strategy": "DA",
-"model_id": "...",
-"prediction": "B",
-"ground_truth": "A",
-"correct": false,
-"input_tokens": 7841,
-"output_tokens": 3,
-"latency_ms": 4210.3
+  "instance_id": "...",
+  "category": "...",
+  "budget": 8192,
+  "prompt_strategy": "DA",
+  "model_id": "...",
+  "prediction": "B",
+  "ground_truth": "A",
+  "correct": false,
+  "input_tokens": 7841,
+  "output_tokens": 3,
+  "latency_ms": 4210.3
 }
-
 Error Analysis
 
 Incorrect predictions are manually annotated into:
@@ -105,6 +94,7 @@ Reasoning Failure (RsF)
 Instruction Non-Compliance (INC)
 
 Annotations are stored in:
+
 annotation/iaa_pilot.csv
 
 Inter-annotator agreement is computed using Cohen’s kappa.
@@ -116,4 +106,5 @@ Latency vs accuracy trade-offs
 Testing
 
 Run unit tests:
+
 pytest
