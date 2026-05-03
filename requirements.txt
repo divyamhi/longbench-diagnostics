@@ -1,0 +1,4 @@
+numpy>=1.24
+nltk>=3.8
+rank-bm25>=0.2.2
+pytest>=8.0
