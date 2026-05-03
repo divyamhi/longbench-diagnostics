@@ -30,7 +30,7 @@ python -c "import nltk; nltk.download('punkt'); nltk.download('punkt_tab')"
 
 - OS: macOS / Windows  
 - Python: 3.13  
-- Hardware: CPU for preprocessing/testing; GPU used for model inference (Google Colab)  
+- Hardware: CPU for preprocessing/testing; GPU used for model inference
 - Models used:
   - Llama-3.1-8B-Instruct 
 
@@ -44,6 +44,8 @@ This project uses the LongBench v2 dataset.
 
 Download the dataset from:
 https://huggingface.co/datasets/THUDM/LongBench
+
+Download the dataset using the HuggingFace datasets library or manually download the JSON files from the link above.
 
 Place the raw JSON files in:
 
@@ -80,6 +82,11 @@ data/processed_longbench/
 ### 1. Load dataset
 ```
 python src/dataset_loader.py --data_dir data/processed_longbench
+```
+
+If you are using raw dataset (without conversion):
+```
+python src/dataset_loader.py
 ```
 
 ### 2. Generate truncated datasets
