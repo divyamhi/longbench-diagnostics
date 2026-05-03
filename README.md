@@ -20,8 +20,10 @@ Errors are categorized into:
 ## Environment Setup
 
 ### 1. Clone the repository
-git clone https://github.com/divyamhi/longbench-diagnostics.git
+```
+git clone <your-repo-link>
 cd longbench-diagnostic
+```
 
 ### 2. Create a virtual environment
 python -m venv venv
@@ -48,6 +50,7 @@ python -c "import nltk; nltk.download('punkt'); nltk.download('punkt_tab')"
 
 ## Project Structure
 
+```
 longbench-diagnostic/
 ├── data/
 ├── src/
@@ -63,6 +66,7 @@ longbench-diagnostic/
 ├── annotation/
 ├── requirements.txt
 └── README.md
+```
 
 ---
 
@@ -72,7 +76,9 @@ Make sure dataset is placed in:
 data/longbench_v2/
 
 ### 1. Load dataset
+```
 python src/dataset_loader.py
+```
 
 ### 2. Generate truncated datasets
 python src/truncate.py
@@ -96,6 +102,7 @@ Each experiment follows these steps:
 
 Example output:
 
+```json
 {
   "instance_id": "...",
   "category": "...",
@@ -109,6 +116,7 @@ Example output:
   "output_tokens": 3,
   "latency_ms": 4210.3
 }
+```
 
 ---
 
