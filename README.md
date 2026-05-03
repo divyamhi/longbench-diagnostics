@@ -28,11 +28,11 @@ python -c "import nltk; nltk.download('punkt'); nltk.download('punkt_tab')"
 
 ## System / Device Used
 
-- OS: macOS / Windows 
+- OS: macOS / Windows  
 - Python: 3.13  
-- Hardware: CPU for preprocessing/testing, GPU for inference 
+- Hardware: CPU for preprocessing/testing; GPU used for model inference (Google Colab)  
 - Models used:
-  - Llama-3.1-8B-Instruct (local)
+  - Llama-3.1-8B-Instruct 
 
 ---
 
@@ -42,31 +42,44 @@ python -c "import nltk; nltk.download('punkt'); nltk.download('punkt_tab')"
 
 This project uses the LongBench v2 dataset.
 
-Download the LongBench v2 dataset from the official source:
-
+Download the dataset from:
 https://huggingface.co/datasets/THUDM/LongBench
 
-After downloading, place the JSON files inside:
+Place the raw JSON files in:
 
 ```
 data/longbench_v2/
 ```
 
-You can create the folder using:
+Create the folder if needed:
 
 ```
 mkdir -p data/longbench_v2
 ```
 
-After placing the dataset files in this directory, you can run:
+---
+
+### Convert dataset to project format
+
+Run:
 
 ```
-python src/dataset_loader.py
+python convert_longbench.py
 ```
+
+This will generate processed dataset files in:
+
+```
+data/processed_longbench/
+```
+
+---
+
+### Run pipeline
 
 ### 1. Load dataset
 ```
-python src/dataset_loader.py
+python src/dataset_loader.py --data_dir data/processed_longbench
 ```
 
 ### 2. Generate truncated datasets
@@ -76,8 +89,8 @@ python src/truncate.py
 
 ### 3. Run inference (pilot experiments)
 
-- 8K context → `results/pilot_8k.jsonl`  
-- 32K context → `results/pilot_32k.jsonl`  
+- 8K context → results/pilot_8k.jsonl  
+- 32K context → results/pilot_32k.jsonl  
 
 ---
 
@@ -89,7 +102,7 @@ Each experiment follows these steps:
 2. Truncate context to a specified token budget  
 3. Build a prompt (Direct Answer or Extract-Then-Answer)  
 4. Run model inference  
-5. Log results using the `InferenceLogger`  
+5. Log results using the InferenceLogger  
 
 Each result is stored in JSONL format:
 
