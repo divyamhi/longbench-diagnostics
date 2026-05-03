@@ -28,12 +28,11 @@ python -c "import nltk; nltk.download('punkt'); nltk.download('punkt_tab')"
 
 ## System / Device Used
 
-- OS: macOS  
+- OS: macOS / Windows 
 - Python: 3.13  
-- Hardware: CPU for preprocessing/testing, GPU for inference (if available)  
+- Hardware: CPU for preprocessing/testing, GPU for inference 
 - Models used:
   - Llama-3.1-8B-Instruct (local)
-  - GPT-4o-mini (API)
 
 ---
 
